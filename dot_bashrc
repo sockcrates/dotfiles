@@ -1,11 +1,3 @@
-if [[ $(uname -s) == "Darwin" ]]; then
-	alias config='/usr/bin/git --git-dir=/Users/mark/.cfg/ --work-tree=/Users/mark'
-fi
-
-if [[ $(uname -s) == "Linux" ]]; then
-	alias config='/usr/bin/git --git-dir=/home/mark/.cfg/ --work-tree=/home/mark'
-fi
-
 export GPG_TTY=$(tty)
 
 if [ -f "$HOME/.cargo/env" ]; then

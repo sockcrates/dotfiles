@@ -101,8 +101,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if [[ $(uname -s) == "Darwin" ]]; then
-	alias config='/usr/bin/git --git-dir=/Users/mark/.cfg/ --work-tree=/Users/mark'
-
 	# >>> conda initialize >>>
 	# !! Contents within this block are managed by 'conda init' !!
 	__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -120,8 +118,6 @@ if [[ $(uname -s) == "Darwin" ]]; then
 fi
 
 if [[ $(uname -s) == "Linux" ]]; then
-	alias config='/usr/bin/git --git-dir=/home/mark/.cfg/ --work-tree=/home/mark'
-
 	export PATH="$PATH:/opt/nvim-linux64/bin"
 	export PATH="$PATH:/usr/local/texlive/2024/bin/x86_64-linux"
 
