@@ -130,6 +130,7 @@ esac
 
 alias vi='nvim'
 alias vim='nvim'
+export EDITOR='nvim'
 
 export GPG_TTY=$(tty)
 
@@ -143,4 +144,8 @@ export PATH="$HOME/.local/bin:$PATH"
 eval "$(/Users/mark/.local/bin/mise activate zsh)"
 {{ else if eq .chezmoi.os "linux" }}
 eval "$(/home/mark/.local/bin/mise activate zsh)"
+{{ end }}
+
+{{ if eq .chezmoi.os "linux" }}
+export SYSTEMD_EDITOR="nvim"
 {{ end }}
