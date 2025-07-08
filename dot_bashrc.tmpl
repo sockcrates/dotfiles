@@ -8,3 +8,8 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 alias vi='nvim'
 alias vim='nvim'
+export EDITOR='nvim'
+
+{{ if eq .chezmoi.os "linux" }}
+export SYSTEMD_EDITOR="nvim"
+{{ end }}
