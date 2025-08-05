@@ -149,3 +149,8 @@ eval "$(/home/mark/.local/bin/mise activate zsh)"
 {{ if eq .chezmoi.os "linux" }}
 export SYSTEMD_EDITOR="nvim"
 {{ end }}
+
+{{ if .is_work }}
+export ARTIFACTORY_USER="{{ .artifactory_user }}"
+export ARTIFACTORY_AUTH_TOKEN="{{ .artifactory_auth_token }}"
+{{ end }}
