@@ -153,4 +153,6 @@ export SYSTEMD_EDITOR="nvim"
 {{ if .is_work }}
 export ARTIFACTORY_USER="{{ .artifactory_user }}"
 export ARTIFACTORY_AUTH_TOKEN="{{ .artifactory_auth_token }}"
+
+eval "$(rbenv init - zsh)"
 {{ end }}
