@@ -1,5 +1,13 @@
+{{ if .is_work }}
+export PATH=$HOME/brew/bin:$PATH
+{{ end }}
+
 {{ if eq .chezmoi.os "darwin" }}
+{{ if .is_work }}
+eval "$($HOME/brew/bin/mise activate zsh)"
+{{ else }}
 eval "$(/Users/$USER/.local/bin/mise activate zsh)"
+{{ end }}
 {{ else if eq .chezmoi.os "linux" }}
 eval "$(/home/$USER/.local/bin/mise activate zsh)"
 {{ end }}
@@ -148,8 +156,4 @@ export PATH="$HOME/.local/bin:$PATH"
 
 {{ if eq .chezmoi.os "linux" }}
 export SYSTEMD_EDITOR="nvim"
-{{ end }}
-
-{{ if .is_work }}
-export PATH=$HOME/brew/bin:$PATH
 {{ end }}
