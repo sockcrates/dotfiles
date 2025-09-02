@@ -1,7 +1,7 @@
 {{ if eq .chezmoi.os "darwin" }}
-eval "$(/Users/mark/.local/bin/mise activate zsh)"
+eval "$(/Users/$USER/.local/bin/mise activate zsh)"
 {{ else if eq .chezmoi.os "linux" }}
-eval "$(/home/mark/.local/bin/mise activate zsh)"
+eval "$(/home/$USER/.local/bin/mise activate zsh)"
 {{ end }}
 
 # If you come from bash you might have to change your $PATH.
@@ -148,4 +148,8 @@ export PATH="$HOME/.local/bin:$PATH"
 
 {{ if eq .chezmoi.os "linux" }}
 export SYSTEMD_EDITOR="nvim"
+{{ end }}
+
+{{ if .is_work }}
+export PATH=$HOME/brew/bin:$PATH
 {{ end }}
