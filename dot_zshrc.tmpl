@@ -149,10 +149,3 @@ export PATH="$HOME/.local/bin:$PATH"
 {{ if eq .chezmoi.os "linux" }}
 export SYSTEMD_EDITOR="nvim"
 {{ end }}
-
-{{ if .is_work }}
-export ARTIFACTORY_USER="{{ .artifactory_user }}"
-export ARTIFACTORY_AUTH_TOKEN="{{ .artifactory_auth_token }}"
-
-eval "$(rbenv init - zsh)"
-{{ end }}
