@@ -1,0 +1,3 @@
+{{ if not .is_work -}}
+dot_work.gitconfig.tmpl
+{{- end }}
