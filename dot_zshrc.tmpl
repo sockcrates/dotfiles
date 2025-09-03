@@ -157,3 +157,8 @@ export PATH="$HOME/.local/bin:$PATH"
 {{ if eq .chezmoi.os "linux" }}
 export SYSTEMD_EDITOR="nvim"
 {{ end }}
+
+{{ if .is_work }}
+export CI_JOB_TOKEN={{ .work_ci_api_token }}
+export NPM_TOKEN={{ .work_ci_api_token }}
+{{ end }}
