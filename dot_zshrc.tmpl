@@ -161,4 +161,7 @@ export SYSTEMD_EDITOR="nvim"
 {{ if .is_work }}
 export CI_JOB_TOKEN={{ .work_ci_api_token }}
 export NPM_TOKEN={{ .work_ci_api_token }}
+
+# PostgreSQL 15 is keg-only, which means it was not symlinked into /usr/local
+export PATH="/Users/markwork/brew/opt/postgresql@15/bin:$PATH"
 {{ end }}
