@@ -131,9 +131,11 @@ export SYSTEMD_EDITOR="nvim"
 {{ end }}
 
 {{ if .is_work }}
+export IS_WORK=1
+
 export CI_JOB_TOKEN={{ .work_ci_api_token }}
 export NPM_TOKEN={{ .work_ci_api_token }}
 
 # PostgreSQL 17 is keg-only, which means it was not symlinked into /usr/local
-export PATH="/Users/markwork/brew/opt/postgresql@17/bin:$PATH"
+export PATH="$HOME/brew/opt/postgresql@17/bin:$PATH"
 {{ end }}
