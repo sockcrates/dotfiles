@@ -114,34 +114,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-{{ if eq .chezmoi.os "darwin" }}
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-	eval "$__conda_setup"
-else
-	if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-		. "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
-	else
-		export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
-	fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-{{ else if eq .chezmoi.os "linux" }}
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-export PATH="$PATH:/usr/local/texlive/2024/bin/x86_64-linux"
-
-# pnpm
-export PNPM_HOME="/home/mark/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-{{ end }}
-
 alias vi='nvim'
 alias vim='nvim'
 export EDITOR='nvim'
