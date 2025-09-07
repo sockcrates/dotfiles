@@ -1,8 +1,8 @@
 [tools]
-{{ if .is_work }}
 node = "latest"
+{{ if .is_work }}
 uv = "latest"
 
 [settings]
-idiomatic_version_file_enable_tools = []
+idiomatic_version_file_enable_tools = [ "python" ]
 {{ end }}
