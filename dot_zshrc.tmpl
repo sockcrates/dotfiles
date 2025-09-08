@@ -138,4 +138,7 @@ export NPM_TOKEN={{ .work_ci_api_token }}
 
 # PostgreSQL 17 is keg-only, which means it was not symlinked into /usr/local
 export PATH="$HOME/brew/opt/postgresql@17/bin:$PATH"
+
+# Get curl installed via Homebrew, instead of the macOS-provided curl
+export PATH="$HOME/brew/opt/curl/bin:$PATH"
 {{ end }}
