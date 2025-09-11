@@ -141,4 +141,5 @@ export PATH="$HOME/brew/opt/postgresql@17/bin:$PATH"
 
 # Get curl installed via Homebrew, instead of the macOS-provided curl
 export PATH="$HOME/brew/opt/curl/bin:$PATH"
+export SSL_CERT_FILE="$(brew --prefix)/etc/ca-certificates/cert.pem"
 {{ end }}
