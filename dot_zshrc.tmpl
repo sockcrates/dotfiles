@@ -9,7 +9,11 @@ eval "$($HOME/homebrew/bin/mise activate zsh)"
 eval "$(/Users/$USER/.local/bin/mise activate zsh)"
 {{ end }}
 {{ else if eq .chezmoi.os "linux" }}
+{{ if eq (env "IS_NIXOS") "1" }}
+eval ""
+{{ else }}
 eval "$(/home/$USER/.local/bin/mise activate zsh)"
+{{ end }}
 {{ end }}
 
 # If you come from bash you might have to change your $PATH.
