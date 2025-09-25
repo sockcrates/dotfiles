@@ -1,10 +1,10 @@
 {{ if .is_work }}
-export PATH=$HOME/brew/bin:$PATH
+export PATH=$HOME/homebrew/bin:$PATH
 {{ end }}
 
 {{ if eq .chezmoi.os "darwin" }}
 {{ if .is_work }}
-eval "$($HOME/brew/bin/mise activate zsh)"
+eval "$($HOME/homebrew/bin/mise activate zsh)"
 {{ else }}
 eval "$(/Users/$USER/.local/bin/mise activate zsh)"
 {{ end }}
@@ -137,9 +137,9 @@ export CI_JOB_TOKEN={{ .work_ci_api_token }}
 export NPM_TOKEN={{ .work_ci_api_token }}
 
 # PostgreSQL 17 is keg-only, which means it was not symlinked into /usr/local
-export PATH="$HOME/brew/opt/postgresql@17/bin:$PATH"
+export PATH="$HOME/homebrew/opt/postgresql@17/bin:$PATH"
 
 # Get curl installed via Homebrew, instead of the macOS-provided curl
-export PATH="$HOME/brew/opt/curl/bin:$PATH"
+export PATH="$HOME/homebrew/opt/curl/bin:$PATH"
 export SSL_CERT_FILE="$(brew --prefix)/etc/ca-certificates/cert.pem"
 {{ end }}
