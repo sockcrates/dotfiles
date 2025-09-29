@@ -8,8 +8,8 @@
 	gpgsign = true
 
 {{ if .is_work }}
-[includeIf "gitdir/i:{{ joinPath (env "HOME") "Documents" .work_git_platform .work_git_repo_owner }}{{ "/" }}"]
+[includeIf "gitdir/i:{{ joinPath (env "HOME") "Projects" .work_git_platform .work_git_repo_owner }}{{ "/" }}"]
     path = {{ joinPath (env "HOME") ".work.gitconfig" }}
-[includeIf "worktree/i:{{ joinPath (env "HOME") "Documents" .work_git_platform .work_git_repo_owner }}{{ "/" }}"]
+[includeIf "worktree/i:{{ joinPath (env "HOME") "Projects" .work_git_platform .work_git_repo_owner }}{{ "/" }}"]
     path = {{ joinPath (env "HOME") ".work.gitconfig" }}
 {{ end }}
